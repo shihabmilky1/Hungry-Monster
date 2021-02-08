@@ -4,6 +4,7 @@ document.getElementById('button').addEventListener('click', function () {
         document.getElementById('alert-empty').style.display = 'block';
     }//end if
     else {
+        document.getElementById('col').innerHTML= ``  ;
         document.getElementById('alert-empty').style.display = 'none';
         const url = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
         //api call
@@ -15,8 +16,10 @@ document.getElementById('button').addEventListener('click', function () {
             if (foodInfo === null) {
                 document.getElementById('alert-error').style.display = "block"
             }
+
             else {
                 document.getElementById('alert-error').style.display = "none"
+
             }
 
             foodInfo.forEach(foods => {
@@ -31,25 +34,23 @@ document.getElementById('button').addEventListener('click', function () {
   </div>
   <div class="card-footer d-none"></div>
 </div>`
-                newRow.appendChild(newCol);
+             newRow.appendChild(newCol);
             });
             document.getElementById('input-value').value = "";
+
+                    
         }//end foodInfo
     }//end else
 });//end click handler
 const foodDetails = name => {
-    console.log(name);
-    const url = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}
-    `)
+    const url = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
     fetch(url)
         .then(res => res.json())
         .then(data => foodInfo(data.meals[0]));
 };//end foodDetails
 const foodInfo = foodInfo => {
-    console.log(foodInfo);
     const list = document.getElementById('food-full-data');
     list.innerHTML = `
-
             <div class="card w-50 card-info card-food mb-5" >
             <img class="card-img-top img-fluid" src="${foodInfo.strMealThumb}" alt="Card image cap">
             <div class="card-body">
