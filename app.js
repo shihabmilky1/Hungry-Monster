@@ -4,14 +4,14 @@ document.getElementById('button').addEventListener('click', function () {
         document.getElementById('alert-empty').style.display = 'block';
     }//end if
     else {
-        document.getElementById('col').innerHTML= ``  ;
+        document.getElementById('col').innerHTML = ``;
         document.getElementById('alert-empty').style.display = 'none';
         const url = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
         //api call
         fetch(url)
             .then(res => res.json())
             .then(data => foodInfo(data.meals));
-            //show data by call api
+        //show data by call api
         const foodInfo = foodInfo => {
             if (foodInfo === null) {
                 document.getElementById('alert-error').style.display = "block"
@@ -34,11 +34,11 @@ document.getElementById('button').addEventListener('click', function () {
   </div>
   <div class="card-footer d-none"></div>
 </div>`
-             newRow.appendChild(newCol);
+                newRow.appendChild(newCol);
             });
             document.getElementById('input-value').value = "";
 
-                    
+
         }//end foodInfo
     }//end else
 });//end click handler
