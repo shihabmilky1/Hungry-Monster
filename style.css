@@ -1,0 +1,18 @@
+body{  font-family: cursive;}
+img{
+    width: 260px;
+    border-radius: 5px;
+
+}
+.card-food{
+    background-color: #f8f7f5;
+    padding-bottom: 15px;
+    box-shadow: 0px 0px 30px 0px rgba(128, 128, 128, 0.301);
+    border: none;
+}
+h3{
+    margin-top: 10px;
+}
+#alert-empty, #alert-error{
+    display: none;
+}
