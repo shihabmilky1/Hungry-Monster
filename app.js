@@ -18,7 +18,7 @@ document.getElementById('button').addEventListener('click', function () {
             else {
                 document.getElementById('alert-error').style.display = "none"
             }
-            
+
             foodInfo.forEach(foods => {
                 const newRow = document.getElementById('col');
                 const newCol = document.createElement('div');
