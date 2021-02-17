@@ -16,3 +16,6 @@ h3{
 #alert-empty, #alert-error{
     display: none;
 }
+.card-hover:hover {
+    cursor: pointer;
+}

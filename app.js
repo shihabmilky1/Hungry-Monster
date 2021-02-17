@@ -28,7 +28,7 @@ document.getElementById('button').addEventListener('click', function () {
                 const newCol = document.createElement('div');
                 const addClass = newCol.className = 'col-md-3 pb-4';
                 newCol.innerHTML = `
-        <div class="card card-food "  onclick="foodDetails('${foods.strMeal}')">
+        <div class="card card-food card-hover"  onclick="foodDetails('${foods.strMeal}')">
   <img class="card-img-top" src="${foods.strMealThumb}" alt="Card image cap">
   <div class="card-body">
   <h4 class="card-title text-center">${foods.strMeal}</h4>
@@ -71,3 +71,10 @@ const foodInfo = foodInfo => {
             </div>
             `
 }//end foodInfo
+const inputValue = document.getElementById("input-value");
+
+inputValue.addEventListener("keypress", function(event) {
+    // event.preventDefault();
+    if (event.keyCode == 13){
+    document.getElementById("button").click();}
+});
