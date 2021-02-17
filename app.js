@@ -2,10 +2,11 @@ document.getElementById('button').addEventListener('click', function () {
     const inputValue = document.getElementById('input-value').value;
     if (inputValue == '') {
         document.getElementById('alert-empty').style.display = 'block';
+        document.getElementById('col').innerHTML = ``;
     }//end if
     else {
+        document.getElementById('alert-empty').style.display = 'none'; 
         document.getElementById('col').innerHTML = ``;
-        document.getElementById('alert-empty').style.display = 'none';
         const url = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
         //api call
         fetch(url)
@@ -64,6 +65,8 @@ const foodInfo = foodInfo => {
               <p class="text-muted"><i class="fas fa-check-circle me-2 text-dark"></i>${foodInfo.strIngredient6}</p>
               <p class="text-muted"><i class="fas fa-check-circle me-2 text-dark"></i>${foodInfo.strIngredient7}</p>
             </div>
+  <button class="btn btn-outline-dark d-block mx-3">Order Now</button>
+
           </div>
             </div>
             `
