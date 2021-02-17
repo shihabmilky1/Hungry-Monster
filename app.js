@@ -9,6 +9,7 @@ document.getElementById('button').addEventListener('click', function () {
         document.getElementById('col').innerHTML = ``;
         const url = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
         //api call
+        toggleSpinner(true);
         fetch(url)
             .then(res => res.json())
             .then(data => foodInfo(data.meals));
@@ -38,7 +39,7 @@ document.getElementById('button').addEventListener('click', function () {
                 newRow.appendChild(newCol);
             });
             document.getElementById('input-value').value = "";
-
+            toggleSpinner(false);
 
         }//end foodInfo
     }//end else
@@ -78,3 +79,7 @@ inputValue.addEventListener("keypress", function(event) {
     if (event.keyCode == 13){
     document.getElementById("button").click();}
 });
+const toggleSpinner = (show) => {
+    const spinner = document.getElementById('spinner');  
+    spinner.classList.toggle('d-none');  
+} 
